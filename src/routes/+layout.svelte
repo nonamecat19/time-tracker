@@ -9,8 +9,12 @@
 			title: "Home"
 		},
 		{
-			href: "/history/",
+			href: "/history",
 			title: "History"
+		},
+		{
+			href: "/settings",
+			title: "Settings"
 		}
 	]
 </script>
@@ -20,7 +24,7 @@
 		<svelte:fragment slot="header">
 			<AppBar>
 				{#each links as {href, title}}
-					<a {href} class={`mr-3 btn ${$page.url.pathname === href ? "variant-ghost-primary" : ""}`}>
+					<a {href} class={`btn ${$page.url.pathname.endsWith(href) ? "variant-filled-primary" : ""}`}>
 						{title}
 					</a>
 				{/each}
