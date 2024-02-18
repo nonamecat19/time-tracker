@@ -77,7 +77,7 @@
 <div class="w-full mt-5">
 		<button
 			type="button"
-			class={`btn ${$isLastSessionEnded ? 'variant-filled' : 'variant-filled-error'} w-full`}
+			class={`btn ${$isLastSessionEnded ? 'variant-filled' : 'variant-filled-primary'} w-full`}
 			on:click={$isLastSessionEnded ? start : stop}
 		>
 			{$isLastSessionEnded ? 'Start': 'Stop'}

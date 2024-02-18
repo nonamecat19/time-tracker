@@ -37,7 +37,7 @@
 				<svelte:fragment slot="content">
 					<div class="flex flex-col gap-2">
 						{#each records.toReversed() as { start, totalMinutes, category, comment }}
-							<div class={`p-2 rounded-lg ${totalMinutes ? 'bg-gray-800' : 'bg-green-800'}`}>
+							<div class={`p-2 rounded-lg ${totalMinutes ? 'bg-gray-800' : 'variant-filled-success'}`}>
 								{#if category}
 									<span class="chip variant-filled">
 										{category}
