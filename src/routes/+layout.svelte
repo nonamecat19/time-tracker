@@ -17,6 +17,14 @@
 			title: "Settings"
 		}
 	]
+
+	function isCurrentRoute(href: string, path: string) {
+		if (href === '/') {
+			return href === path
+		}
+		return path.startsWith(href);
+	}
+
 </script>
 
 <main class="max-w-screen-w max-h-screen-h">
@@ -24,7 +32,7 @@
 		<svelte:fragment slot="header">
 			<AppBar>
 				{#each links as {href, title}}
-					<a {href} class={`btn ${$page.url.pathname.endsWith(href) ? "variant-filled-primary" : ""}`}>
+					<a {href} class={`btn ${isCurrentRoute(href, $page.url.pathname) ? "variant-filled-primary" : ""}`}>
 						{title}
 					</a>
 				{/each}
