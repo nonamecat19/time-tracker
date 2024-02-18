@@ -56,10 +56,10 @@
 		"windows": [
 			{
 				"fullscreen": false,
-				"height": 600,
-				"resizable": true,
-				"title": "Skeleton starter Tauri",
-				"width": 400
+				"height": 400,
+				"resizable": false,
+				"title": "Time tracker",
+				"width": 350
 			}
 		]
 	}

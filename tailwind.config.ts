@@ -15,7 +15,7 @@ export default {
 				'screen-w': '400px'
 			},
 			height: {
-				'screen-h': '600px'
+				'screen-h': '400px'
 			}
 		}
 	},
