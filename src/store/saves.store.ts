@@ -2,6 +2,7 @@ import { createLocalStorage, persist } from '@macfja/svelte-persistent-store';
 import { derived, writable } from 'svelte/store';
 import type { Session } from '../types';
 import { differenceInMinutes } from 'date-fns';
+import { filter } from 'lodash';
 
 export const session = persist(writable<Session[]>([]), createLocalStorage(), 'saves');
 
@@ -39,3 +40,11 @@ export const isLastSessionEnded = derived(session, ($session) => {
 	const lastSession = $session[$session.length - 1];
 	return !!lastSession.end;
 });
+
+export const deleteByStartDate = (start: Date) => {
+	session.update((oldState) => {
+		return filter(oldState, (value) => {
+			return value.start !== start;
+		});
+	});
+};
