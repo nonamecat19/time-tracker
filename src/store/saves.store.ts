@@ -5,7 +5,7 @@ import { differenceInMinutes } from 'date-fns';
 
 export const session = persist(writable<Session[]>([]), createLocalStorage(), 'saves');
 
-export const addSession = (category: string, comment: string) => {
+export const startSession = (category: string, comment: string) => {
 	const newElement: Session = {
 		category,
 		comment,
@@ -26,7 +26,7 @@ export const endSession = () => {
 			return value;
 		}
 		lastElement.end = new Date();
-		lastElement.totalMinutes = differenceInMinutes(lastElement.start, lastElement.end);
+		lastElement.totalMinutes = differenceInMinutes(lastElement.end, lastElement.start);
 		return newValue;
 	});
 };

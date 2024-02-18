@@ -38,6 +38,8 @@
 				{/each}
 			</AppBar>
 		</svelte:fragment>
-		<slot />
+		<div class="w-full p-2">
+			<slot />
+		</div>
 	</AppShell>
 </main>
