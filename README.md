@@ -1,38 +1,29 @@
-# create-svelte
+# Skeleton - Tauri Starter Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Welcome to the official Skeleton - Tauri template that allows you to start creating your desktop apps now.
 
-## Creating a project
+## What's Skeleton?
 
-If you're seeing this, you've probably already done this step. Congrats!
+Skeleton is a powerful UI toolkit built using Svelte and Tailwind CSS. Create adaptive, accessible design systems for your web apps.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## What's Tauri?
 
-# create a new project in my-app
-npm create svelte@latest my-app
+Tauri is a toolkit that helps developers make applications for the major desktop platforms - using virtually any frontend framework in existence. The core is built with Rust, and the CLI leverages Node.js making Tauri a genuinely polyglot approach to creating and maintaining great apps.
+
+## Prerequisites
+
+Before you begin, make sure to install all required Rust language and system dependencies per the guide below.
+
+[Tauri Prerequisites Guide](https://tauri.app/v1/guides/getting-started/prerequisites/)
+
+## How to use
+
+This project is already setup to start working on it. You only need to clone it.
+
+```shell
+git clone https://github.com/skeletonlabs/skeleton-starter-tauri.git
 ```
 
-## Developing
+Take into account that this is an opinionated template, which uses the Skeleton theme, Typescript and npm. If you prefer to start from scratch, you can follow our [step-by-step guide](https://www.skeleton.dev/docs/tauri)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Have fun!
