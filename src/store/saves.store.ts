@@ -1,6 +1,7 @@
-import { persist, createLocalStorage } from '@macfja/svelte-persistent-store';
+import { createLocalStorage, persist } from '@macfja/svelte-persistent-store';
 import { derived, writable } from 'svelte/store';
 import type { Session } from '../types';
+import { differenceInMinutes } from 'date-fns';
 
 export const session = persist(writable<Session[]>([]), createLocalStorage(), 'saves');
 
@@ -20,7 +21,12 @@ export const endSession = () => {
 			return value;
 		}
 		const newValue = structuredClone(value);
-		newValue.at(-1)!.end = new Date();
+		const lastElement = newValue.at(-1);
+		if (!lastElement) {
+			return value;
+		}
+		lastElement.end = new Date();
+		lastElement.totalMinutes = differenceInMinutes(lastElement.start, lastElement.end);
 		return newValue;
 	});
 };

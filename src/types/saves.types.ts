@@ -3,4 +3,5 @@ export type Session = {
 	comment?: string;
 	start: Date;
 	end?: Date;
+	totalMinutes?: number;
 };
